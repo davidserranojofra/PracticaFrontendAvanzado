@@ -1,0 +1,26 @@
+{
+  "name": "practicafrontendavanzado",
+  "version": "1.0.0",
+  "description": "Ejercicio para convertirme en frontend ninja!!!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidserranojofra/PracticaFrontendAvanzado.git"
+  },
+  "author": "David Serrano Jofra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidserranojofra/PracticaFrontendAvanzado/issues"
+  },
+  "homepage": "https://github.com/davidserranojofra/PracticaFrontendAvanzado#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-notify": "^3.0.0",
+    "gulp-sass": "^3.1.0"
+  }
+}
