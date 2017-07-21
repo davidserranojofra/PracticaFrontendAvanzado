@@ -1,0 +1,258 @@
+
+.header-titulo-menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: $color-principal;
+    color: $color-claro;
+    height: 70px;
+    line-height: 70px;
+    width: 100%;
+
+    h1 {
+        background-color: coral;
+        width: 40%;
+        text-align: center;
+
+        @include desktop {
+            width: 100%;
+            height: 100px;
+        }
+    }
+
+    .container-interaccion-menu {
+        display: flex;
+        justify-content: space-between;
+
+        @include desktop {
+            background-color: $color-principal;
+            width: 100%;
+            height: 70px;
+            
+        }
+
+        .menu-principal {
+            order: 1;
+            margin-left: 10px;
+
+            .cerrado {
+                display: none;
+                justify-content: space-around;
+                flex-direction: column;
+                position: absolute;
+                width: 80%;
+                top: 75px;
+                right: 0;
+                z-index: 2;
+
+                @include desktop {
+                    position: inherit;
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+                    top: 0;
+                    max-width: 1200;
+
+                }
+
+                li {
+                    list-style: none;
+//////////			flex-grow: 1;
+                    text-align: center;
+
+                    a {
+                        text-decoration: none;
+                        padding: 0 10px;
+                        display: block;
+                        background-color: $color-principal;
+                        color: $texto-claro;
+                        &:hover {
+                            background-color: $color-principal-claro;
+                            color: $texto-claro;
+                        }
+                    }
+                }
+            }
+
+
+        } 
+
+        .registros {
+            margin: 0 15px;
+
+            @include desktop {
+                display: flex;
+                justify-content: flex-start;
+                width: 100%;
+            }
+
+            .busqueda-container {
+                .buscar-icono {
+                    color: $texto-claro;
+                }
+
+                @include desktop {
+                    order: 1;
+                    margin-left: 15px;
+                }
+
+                .busqueda-input {
+                    display: none;
+                    position: absolute;
+                    border: 2px solid $texto-claro;
+                    top: 70px;
+                    left: 0;
+                    height: 35px;
+                    padding: 15px;
+                    width: 100%;
+                    font-size: $font-size-base;
+
+                    @include tablet {
+                        display: inline;
+                        position: inherit;
+                        width: inherit;
+                        margin-left: 5px;
+                    }
+                }
+            }
+
+            .contenedor-loguin {
+                display: none;
+
+                @include desktop {
+                    display: flex;
+                }
+
+                li {
+                    list-style: none;
+                    text-align: center;
+
+                    a {
+                        text-decoration: none;
+                        padding: 0 10px;
+                        display: block;
+                        background-color: $color-principal;
+                        color: $texto-claro;
+                        &:hover {
+                            background-color: $color-principal-claro;
+                            color: $texto-claro;
+                        }
+                    }
+
+                    @include desktop {
+                        padding: 0 5px;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+
+
+
+.navigacion_toggle {
+	text-decoration: none;
+	width: auto;
+	height: auto;
+	background-color: $texto-claro;
+	z-index: 2;
+
+	@include desktop {
+		display: none!important;
+	}
+}
+
+
+
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+    padding: 0px 15px;
+    display: inline-block;
+    cursor: pointer;
+    transition-property: opacity, -webkit-filter;
+    transition-property: opacity, filter;
+    transition-property: opacity, filter, -webkit-filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: $color-principal;;
+    border: 0;
+    margin: 0;
+    overflow: visible; }
+.hamburger:hover {
+    opacity: 0.9; }
+
+.hamburger-box {
+    width: 40px;
+    height: 24px;
+    display: inline-block;
+    right: 0px;
+    position: relative; }
+
+.hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: -2px; }
+  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    width: 40px;
+    height: 2px;
+    background-color: $texto-claro;
+    border-radius: 4px;
+    position: absolute;
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform, -webkit-transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease; }
+  .hamburger-inner::before, .hamburger-inner::after {
+    content: "";
+    display: block; }
+  .hamburger-inner::before {
+    top: -10px; }
+  .hamburger-inner::after {
+    bottom: -10px; }
+
+/*
+ * Collapse
+ */
+.hamburger--collapse .hamburger-inner {
+    top: auto;
+    bottom: 0;
+    transition-duration: 0.15s;
+    transition-delay: 0.15s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+.hamburger--collapse .hamburger-inner::after {
+    top: -20px;
+    transition: top 0.3s 0.3s cubic-bezier(0.33333, 0.66667, 0.66667, 1), opacity 0.1s linear; }
+.hamburger--collapse .hamburger-inner::before {
+    transition: top 0.12s 0.3s cubic-bezier(0.33333, 0.66667, 0.66667, 1), -webkit-transform 0.15s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transition: top 0.12s 0.3s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.15s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transition: top 0.12s 0.3s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.15s cubic-bezier(0.55, 0.055, 0.675, 0.19), -webkit-transform 0.15s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+
+.hamburger--collapse.is-active .hamburger-inner {
+    -webkit-transform: translate3d(0, -10px, 0) rotate(-45deg);
+            transform: translate3d(0, -10px, 0) rotate(-45deg);
+    transition-delay: 0.32s;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+.hamburger--collapse.is-active .hamburger-inner::after {
+    top: 0;
+    opacity: 0;
+    transition: top 0.3s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s 0.27s linear; }
+.hamburger--collapse.is-active .hamburger-inner::before {
+    top: 0;
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+    transition: top 0.12s 0.18s cubic-bezier(0.33333, 0, 0.66667, 0.33333), -webkit-transform 0.15s 0.42s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: top 0.12s 0.18s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.15s 0.42s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: top 0.12s 0.18s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.15s 0.42s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.15s 0.42s cubic-bezier(0.215, 0.61, 0.355, 1); }
+
