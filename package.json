@@ -18,6 +18,8 @@
   "homepage": "https://github.com/davidserranojofra/PracticaFrontendAvanzado#readme",
   "devDependencies": {
     "autoprefixer": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^7.3.0",
     "browser-sync": "^2.18.12",
     "browserify": "^14.4.0",
     "cssnano": "^3.10.0",

@@ -35,6 +35,17 @@
             order: 1;
             margin-left: 10px;
 
+            .fueramenu {
+                background-color: $color-principal-claro;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                position: absolute;
+                opacity: 0.1;
+                z-index: 1; 
+            }
+
             .cerrado {
                 display: none;
                 justify-content: space-around;
@@ -150,7 +161,9 @@
 }
 
 
-
+.abrir {
+  display: flex !important; 
+}
 
 .navigacion_toggle {
 	text-decoration: none;
@@ -163,8 +176,6 @@
 		display: none!important;
 	}
 }
-
-
 
 /*!
  * Hamburgers

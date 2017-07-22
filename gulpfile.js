@@ -58,7 +58,7 @@ gulp.task("html", function(){
 
 // compilar y generar un único javascript
 gulp.task("js", function(){
-    gulp.src("src/js/main.js")
+    gulp.src("src/js/principal.js")
         .pipe(tap(function(file){ // tap nos permite ejecutar una función por cada fichero seleccionado en gulp.src
             // reemplazamos el contenido del fichero por lo que nos devuelve browserify pasándole el fichero
             file.contents = browserify(file.path, {debug: true}) // creamos una instancia de browserify en base al archivo
