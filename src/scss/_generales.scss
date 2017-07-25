@@ -16,6 +16,8 @@ body {
     background-color: $color-oscuro;
     font-family: $texto-tipo;
     font-size: $font-size-base;
+    max-width: 1300px;
+    margin: auto;
 }
 
 .oculto {

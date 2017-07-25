@@ -1,0 +1,26 @@
+.section-detalle {
+    background-color: $color-principal;
+
+    h2 {
+        text-align: center;
+    }
+
+    .container-detalles {
+        display: flex;
+        flex-direction: column;
+
+        .media {
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .explicacion {
+            text-align: justify;
+
+        }
+    }
+
+}
+
