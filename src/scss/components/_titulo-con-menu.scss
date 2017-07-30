@@ -10,30 +10,34 @@
     width: 100%;
 
     h1 {
-        background-color: coral;
-        width: 40%;
+        padding-left: 2px;
+        width: 48%;
         text-align: center;
+        font-size: $font-size-h1;
 
         @include desktop {
             width: 100%;
-            height: 100px;
+        }
+
+        .titulo {
+            text-decoration: none;
+            color: $color-accento;
         }
     }
 
     .container-interaccion-menu {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
 
         @include desktop {
             background-color: $color-principal;
             width: 100%;
-            height: 70px;
-            
         }
 
         .menu-principal {
             order: 1;
             margin-left: 10px;
+            flex: 1;
 
             .fueramenu {
                 background-color: $color-principal-claro;
@@ -68,7 +72,6 @@
 
                 li {
                     list-style: none;
-//////////			flex-grow: 1;
                     text-align: center;
 
                     a {
@@ -98,19 +101,26 @@
             }
 
             .busqueda-container {
-                .buscar-icono {
-                    color: $texto-claro;
-                }
+                padding: 0 0px;
 
                 @include desktop {
                     order: 1;
                     margin-left: 15px;
                 }
 
+                .lupa {
+                    padding: 15px;
+
+                    @include tablet {
+                        padding: 0;
+                    } 
+                }
+
                 .busqueda-input {
                     display: none;
                     position: absolute;
                     border: 2px solid $texto-claro;
+                    border-radius: 5px;
                     top: 70px;
                     left: 0;
                     height: 35px;

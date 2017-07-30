@@ -1,5 +1,7 @@
 //fuentes
-@import url('https://fonts.googleapis.com/css?family=Quicksand|Ubuntu:300');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700|Ubuntu:400,400i,700');
+
+@import "iconos/font-awesome.scss";
 
 //General
 @import "reset";
@@ -11,9 +13,11 @@
 @import "components/titulo-con-menu";
 @import "components/section";
 @import "components/footer.scss";
+@import "components/_paginacion.scss";
 
 //Components de Detalles
-@import "components/detalle-body.scss"
+@import "components/detalle-body.scss";
+@import "components/_detalle-form.scss";
 
 
 

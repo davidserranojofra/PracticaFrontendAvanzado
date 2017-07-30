@@ -1,0 +1,55 @@
+.section-detalle {
+    background-color: lighten($color-principal, 25%);
+
+    .titulo-seccion {
+        text-align: center;
+        padding: 10px;
+        transition: all 0.30s linear;
+        @include desktop {
+            padding: 20px;
+            margin-top: 70px;
+            transition: all 0.30s linear;
+        }
+    }
+
+    .container-detalles {
+        display: flex;
+        flex-direction: column;
+
+        .media {
+            img {
+                width: 100%;
+                height: auto;
+                padding: 0 2px;
+            }
+        }
+
+        .explicacion {
+            text-align: justify;
+            padding: 15px 5px;
+
+            a{
+                color: $color-blanco;
+                transition: color 0.25s linear;
+
+                &:hover, &:active {
+                    color: $color-accento;
+                    transition: color 0.25s linear;
+                }
+
+
+            }
+
+            @include tablet {
+                padding: 20px 25px;
+            }
+
+            .subtitulo {
+                text-align: center;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+}
+

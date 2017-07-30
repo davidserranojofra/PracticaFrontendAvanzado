@@ -4,49 +4,68 @@ section {
 }
 
 .ui-estado {
-    color: $color-accento;
+    color: $color-principal-claro;
 }
 
 .articulos {
     display: flex;
     flex-wrap: wrap;
+    align-items: stretch;
 }
 
 .categoria {
+    padding: 0 0px;
+
     .titulo-categoria {
         text-align: center;
         color: $texto-claro;
         padding: 15px 0;
-        background-color: $color-accento;
-        margin: 5px 5px 0 5px;
+        background-color: $color-oscuro;
+        margin: 2px 1px 0 1px;
 
         @include desktop {
-            margin-top: 105px;
+            margin-top: 70px;
         }
     }
 
-    @include desktop {
-        margin-top: 100px;
-    }
-    
     .articulo {
-        margin: 5px 5px;
-        padding: 5px;
-        width: calc(50% - 10px);
-        height: 240px;
-        background-color: $color-accento;
-        color: $color-oscuro;
+        margin: 1px;
+        border: 2px solid $color-principal;
+        padding: 0px;
+        width: 100%;
+        min-height: 244px;
+        background-color: $color-principal-claro;
+        color: $texto-oscuro;
         overflow: hidden;
 
         @include tablet {
-            width: calc((100% / 3) - 10px);
-            padding: 8px;
-            height: 240px;
+            width: calc((100% / 3) - 2px);
+            padding: 0px;
+            min-height: 350px;
         }
 
         @include desktop {
-            width: calc((100% / 5) - 10px);
-            padding: 10px;
+            width: calc((100% / 5) - 2px);
+            padding: 0px;
+            min-height: 380px;
+        }
+
+        .quien-publica {
+            display: flex;
+            padding: 5px;
+            
+            .datos-publicador {
+                padding: 0 5px;
+                align-self: center;
+
+                .fecha-publicacion {
+                    font-size: $font-size-small;
+                }
+            }
+        }
+
+        .comentarios {
+            padding: 0 5px;
         }
 
         .foto-articulo {
@@ -54,13 +73,25 @@ section {
             height: auto;
         }
 
+        .titulo-articulo {
+            padding: 0 5px;
+        }
+
         .descripcion-articulo {
             margin-top: 5px;
             text-align: justify;
+            padding: 5px;
         }
 
-    }
+        .megusta {
+            display: block;
+            margin: 10px auto 15px;
 
+            .fa-star {
+                color: yellow;
+            }
+        }
+    }
 }
 
 .categoria2 {
@@ -78,4 +109,3 @@ section {
 .categoria5 {
     background-color: lightseagreen;
 }
-
