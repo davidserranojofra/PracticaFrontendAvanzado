@@ -4,7 +4,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     background-color: $color-principal;
-    color: $color-claro;
+    color: $color-blanco;
     height: 70px;
     line-height: 70px;
     width: 100%;
@@ -21,7 +21,7 @@
 
         .titulo {
             text-decoration: none;
-            color: $color-accento;
+            color: $color-blanco;
         }
     }
 
@@ -80,15 +80,16 @@
                         display: block;
                         background-color: $color-principal;
                         color: $texto-claro;
-                        &:hover {
+                        transition: all 0.25s linear;
+
+                        &:hover, &:active {
                             background-color: $color-principal-claro;
                             color: $texto-claro;
+                            transition: all 0.25s linear;
                         }
                     }
                 }
             }
-
-
         } 
 
         .registros {
@@ -109,7 +110,7 @@
                 }
 
                 .lupa {
-                    padding: 15px;
+                    padding: 10px;
 
                     @include tablet {
                         padding: 0;
@@ -154,9 +155,12 @@
                         display: block;
                         background-color: $color-principal;
                         color: $texto-claro;
-                        &:hover {
+                        transition: all 0.25s linear;
+
+                        &:hover, &:active {
                             background-color: $color-principal-claro;
                             color: $texto-claro;
+                            transition: all 0.25s linear;
                         }
                     }
 

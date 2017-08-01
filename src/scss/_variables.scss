@@ -1,15 +1,15 @@
 // colores
-
 $color-oscuro: #424242;
-$color-principal: #795548;
-$color-principal-claro: #BCAAA4;
-$color-accento: #FFA000;
-$color-claro: #fff;
+$color-principal: #F57C00;
+$color-principal-claro: #ccc;
+$color-accento: $color-principal;
 $color-blanco: #ffffff;
 $color-negro: #212121;
 $color-error: #DD2C00;
 
-
+//colores texto
+$texto-claro: $color-blanco;
+$texto-oscuro: $color-negro;
 
 // tipografias
 $titulo-tipo: 'Quicksand', sans-serif;
@@ -26,7 +26,3 @@ $font-size-h4: $font-size-base + 6px;
 $font-size-h5: $font-size-base + 3px;
 $font-size-h6: $font-size-base;
 
-//colores texto
-
-$texto-claro: $color-claro;
-$texto-oscuro: #212121;

@@ -18,7 +18,7 @@ section {
 
     .titulo-categoria {
         text-align: center;
-        color: $texto-claro;
+        color: $color-principal;
         padding: 15px 0;
         background-color: $color-oscuro;
         margin: 2px 1px 0 1px;
@@ -50,19 +50,7 @@ section {
             min-height: 380px;
         }
 
-        .quien-publica {
-            display: flex;
-            padding: 5px;
-            
-            .datos-publicador {
-                padding: 0 5px;
-                align-self: center;
 
-                .fecha-publicacion {
-                    font-size: $font-size-small;
-                }
-            }
-        }
 
         .comentarios {
             padding: 0 5px;
@@ -82,15 +70,29 @@ section {
             text-align: justify;
             padding: 5px;
         }
+    }
+}
 
-        .megusta {
-            display: block;
-            margin: 10px auto 15px;
+.quien-publica {
+    display: flex;
+    padding: 5px 0;
+            
+    .datos-publicador {
+        padding: 0 5px;
+        align-self: center;
 
-            .fa-star {
-                color: yellow;
-            }
+        .fecha-publicacion {
+            font-size: $font-size-small;
         }
+    }
+}
+
+.megusta {
+    display: block;
+    margin: 15px auto 15px;
+
+    .fa-star {
+        color: yellow;
     }
 }
 

@@ -46,14 +46,12 @@ body {
     border-radius: 5px;
     transition: background-color 0.25s linear;
     padding: 12px;
+    font-size: $font-size-base;
+    background-color: lighten($color-principal, 50%);
 
-    &:active {
+    &:active, &:hover {
         background-color: $color-principal;
-        transition: background-color 0.25s linear;
-    }
-
-    &:hover {
-        background-color: $color-principal;
+        border: 1px solid $color-negro;
         transition: background-color 0.25s linear;
     }
 }

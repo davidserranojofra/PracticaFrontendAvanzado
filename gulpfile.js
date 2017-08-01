@@ -12,9 +12,11 @@ var uglify = require("gulp-uglify");
 var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
 var cssnano = require("cssnano");
+var imagemin = require("gulp-imagemin");
+var responsive = require("gulp-responsive");
 
 // definimos la tarea por defecto
-gulp.task("default", ["html", "sass", "js"], function(){
+gulp.task("default", ["img", "html", "sass", "js"], function(){
 
     // iniciamos el servidor de desarrollo
     browserSync.init({ server: "build/" });
@@ -75,4 +77,18 @@ gulp.task("js", function(){
         .pipe(gulp.dest("build/")) // lo guardamos en la carpeta dist
         .pipe(browserSync.stream()) // recargamos el navegador
         .pipe(notify("JS Compilado"));
+});
+
+// tarea que optimiza y crea las imágenes responsive
+gulp.task("img", function(){
+    gulp.src("src/img/*")
+        .pipe(responsive({ // generamos las versiones responsive
+            '*': [
+                { width: 255, rename: { suffix: "-255px"}},
+                { width: 337, rename: { suffix: "-337px"}},
+                { width: 658, rename: { suffix: "-658px"}}
+            ]
+        }))
+        .pipe(imagemin()) // optimizamos el peso de las imágenes
+        .pipe(gulp.dest("build/img/"))
 });
