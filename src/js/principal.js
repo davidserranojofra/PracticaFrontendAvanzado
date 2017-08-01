@@ -1,43 +1,36 @@
+window.$ = window.jQuery = require("jquery");
 
-let $ = require("jquery");
+$.ajax ({
+	url: "/comentarios/",
+	success: comentarios => {
 
-	$(document).ready(function(){
-	    $("#nav-toggle").click(function(){
-	        if ($("#abrir_cerrar").hasClass('abrir')){
-	        	$("#abrir_cerrar").removeClass('abrir');
-	        	$("#fueramenu").removeClass('fueramenu');
-	        	$("#nav-toggle").removeClass('is-active');
-	        } else{
-	        	$("#abrir_cerrar").addClass('abrir');
-	        	$("#fueramenu").addClass('fueramenu');
-	        	$("#nav-toggle").addClass('is-active');
-	        }
-	    });
-	    
-	    // si se hace clic en cualquier parte de la pantalla se cierra menu
-	    $("#fueramenu").click(function(){
-	        $("#abrir_cerrar").removeClass('abrir');
-	       	$("#fueramenu").removeClass('fueramenu');
-	       	$("#nav-toggle").removeClass('is-active');
-	    });
-	    
-	    //al hacer clic en boton menu si esta acticvado se cierra menu 
-	    $(".boton_menu").click(function(){
-	        $("#abrir_cerrar").removeClass('abrir');
-	       	$("#fueramenu").removeClass('fueramenu');
-	       	$("#nav-toggle").removeClass('is-active');
-	    });
-	});
+		//Hay canciones
+		if (comentarios.lenght == 0) {
+			$(".comentarios").removeClass("loading").addClass("empty");
+		} else {
+			let html = "";
 
-//-- Movimiento de menu hamburguesa -->
+			for (let coment of comentarios) {
+				html += `<div class="mostrar-comentarios-enviados">
+							<div class="datos-persona">
+								<h5>${coment.nombre} ${coment.apellidos}</h5>
+								<br>
+								<p>${coment.email}</p>
+								<br>
+								<p>${coment.fecha}</p>
+							</div>
+							<div class="comentario-persona">${coment.comentario}</div>
+						</div>`;
+			}
 
-		var forEach=function(t,o,r){if("[object Object]"===Object.prototype.toString.call(t))for(var c in t)Object.prototype.hasOwnProperty.call(t,c)&&o.call(r,t[c],c,t);else for(var e=0,l=t.length;l>e;e++)o.call(r,t[e],e,t)};
+			$(".comentarios .ui-status.ideal .coments").html(html);
 
-    	var hamburgers = document.querySelectorAll(".hamburger");
-    	if (hamburgers.length > 0) {
-      		forEach(hamburgers, function(hamburger) {
-        		hamburger.addEventListener("click", function() {
-          			this.classList.toggle("is-active");
-        			}, false);
-      		});
-    	}
+			$(".comentarios").removeClass("loading").addClass("ideal");
+		}
+	},
+	error: error => {
+		$(".comentarios").removeClass("loading").addClass("error");
+
+		console.log("ERROR", error);
+	}
+});
