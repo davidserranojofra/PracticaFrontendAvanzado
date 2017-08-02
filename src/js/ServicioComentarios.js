@@ -22,11 +22,11 @@ export default class ServicioComentarios {
         }
     }
 
-    crear(coment, successCallback, errorCallback) {
+    crear(comentario, successCallback, errorCallback) {
         $.ajax({
             url: this.url,
             method: "post",
-            data: comentatario,
+            data: comentario,
             success: successCallback,
             error: errorCallback
         });
