@@ -44,7 +44,7 @@ export default class UIManager {
     }
 
     setIdealHtml(html) {
-        this.elemento.find(".ui-status.ideal").html(html);
+        this.elemento.find(".ui-status.ideal .coments").html(html);
     }
         
 }
