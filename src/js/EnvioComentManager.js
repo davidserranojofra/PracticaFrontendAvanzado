@@ -4,9 +4,10 @@ import UIManager from "./UIManager";
 
 export default class EnvioComentManager extends UIManager {
 
-    constructor(elementoSelector ,servicioComentarios) {
+    constructor(elementoSelector ,servicioComentarios, pubSub) {
         super(elementoSelector);
         this.servicioComentarios = servicioComentarios;
+        this.pubSub = pubSub;
     } 
 
     init() {
@@ -44,10 +45,9 @@ export default class EnvioComentManager extends UIManager {
     }
 
     enviar() {
-        // this.setLoading();
-console.log(this.elemento.find("#nombre-form"));
+        this.setLoading();
+
         const comentario = {
-            
             nombre: this.elemento.find("#nombre-form").val(),
             apellidos: this.elemento.find("#apellidos-form").val(),
             email: this.elemento.find("#email-form").val(),
@@ -55,7 +55,7 @@ console.log(this.elemento.find("#nombre-form"));
             fecha: "hace 8 dias"
         };
         this.servicioComentarios.crearOActualizar(comentario, success => {
-            console.log(comentario);
+            this.pubSub.publish("nuevo-comentario", comentario);
             this.resetForm();
             this.setIdeal();
         }, error => {
@@ -66,6 +66,29 @@ console.log(this.elemento.find("#nombre-form"));
 
     resetForm() {
         this.elemento[0].reset();
+    }
+
+    desactivarForm() {
+        this.elemento.find("input, button").attr("disabled", true);
+    }
+
+    activarForm() {
+        this.elemento.find("input, button").attr("disabled", false);
+    }
+
+    setLoading() {
+        super.setLoading();
+        this.desactivarForm();
+    }
+
+    setError() {
+        super.setError();
+        this.activarForm();
+    }
+
+    setIdeal() {
+        super.setIdeal();
+        this.activarForm();
     }
 
 }

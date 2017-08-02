@@ -1,12 +1,16 @@
 export default class ComentsListManager {
 
-    constructor(servicioComentarios, uiManager) {
+    constructor(servicioComentarios, uiManager, pubSub) {
         this.servicioComentarios = servicioComentarios;
         this.uiManager = uiManager;
+        this.pubSub = pubSub;
     }
 
     init() {
         this.cargarComentarios();
+        this.pubSub.subscribe("nuevo-comentario", (topic, comentario) => {
+            this.cargarComentarios();
+        });
     }
 
     cargarComentarios() {
