@@ -103,7 +103,6 @@
                             border: none;
                         }
 
-
                         &:hover, &:active {
                             background-color: $color-principal-claro;
                             color: $texto-claro;
@@ -141,7 +140,7 @@
                 }
                 .busqueda-input {
                     position: absolute;
-                    border: 2px solid $texto-claro;
+                    border: 2px solid $color-principal-claro;
                     border-radius: 5px;
                     top: 70px;
                     left: 0;
@@ -149,6 +148,10 @@
                     padding: 15px;
                     width: 100%;
                     font-size: $font-size-base;
+
+                    &:focus {
+                        outline-color: $color-principal;
+                    }
 
                     @include tablet {
                         // display: inline;
