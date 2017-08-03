@@ -11,7 +11,15 @@
         .ui-status.error { display: block; }
     }
     &.ideal {
-        .ui-status.ideal { display: block; }
+        .ui-status.ideal { 
+            display: block;
+            background-color: $color-negro;
+
+            .contenedor {
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
     }
 
     &.loading, &.error {
@@ -41,25 +49,33 @@
     padding: 10px 5px;
 }
 
-.mostrar-comentarios-enviados {
-    display: flex;
-    border-top: 2px solid $color-principal;
-    padding: 10px 0;
-    color: $color-blanco;
-
-    @include tablet {
-        padding: 10px 5px;
+.coments {
+    @include desktop {
+        padding: 0 40px;
     }
 
-    .datos-persona {
-        width: 30%;
-        padding: 5px;
-    }
+    .mostrar-comentarios-enviados {
+        display: flex;
+        border-top: 2px solid $color-principal;
+        padding: 10px 0;
+        color: $color-blanco;
 
-    .comentario-persona {
-        width: 70%;
-        padding: 5px;
-        text-align: justify;
+        @include tablet {
+            padding: 10px 5px;
+        }
+
+        .datos-persona {
+            width: 30%;
+            padding: 5px;
+        }
+
+        .comentario-persona {
+            width: 70%;
+            padding: 5px;
+            text-align: justify;
+        }
     }
 }
+
+
 

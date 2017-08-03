@@ -26,7 +26,27 @@ let $ = require("jquery");
 	        $("#abrir_cerrar").removeClass('abrir');
 	       	$("#fueramenu").removeClass('fueramenu');
 	       	$("#nav-toggle").removeClass('is-active');
-	    });
+		});
+		
+		//mostrar y ocultar input buscar en pantallas pequeñas
+		var anchoVentana = $(window).width();
+		console.log(anchoVentana);
+
+		$(".buscar-icono").on("click", function() {
+			$("#busqueda").toggle("fast", function() {
+				if (anchoVentana <= 666) {
+					if ($(".m-bottom").length) {
+						$(".header-titulo-menu-container").removeClass("m-bottom");
+						console.log("si");
+					} else {
+						$(".header-titulo-menu-container").addClass("m-bottom");
+						console.log("no");
+					}
+				}
+				
+				$("#busqueda").removeClass("none");
+			});
+		});
 	});
 
 //-- Movimiento de menu hamburguesa -->

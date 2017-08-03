@@ -1,13 +1,19 @@
 // formulario comentarios
 
 .comentarios-form {
-
+    border-top: 2px solid $color-principal;
+    padding: 20px;
+    background-color: $color-negro;
 
     .ui-status {
-        background-color: $color-negro;
+
         padding: 10px 5px;
         display: flex;
         flex-wrap: wrap;
+
+            @include desktop {
+                padding: 0 40px;
+            }
 
         label, input, textarea, button {
             display: block;

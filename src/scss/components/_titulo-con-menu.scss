@@ -32,6 +32,7 @@
         @include desktop {
             background-color: $color-principal;
             width: 100%;
+            justify-content: center;
         }
 
         .menu-principal {
@@ -56,7 +57,7 @@
                 flex-direction: column;
                 position: absolute;
                 width: 80%;
-                top: 75px;
+                top: 70px;
                 right: 0;
                 z-index: 2;
 
@@ -66,9 +67,17 @@
                     flex-direction: row;
                     width: 100%;
                     top: 0;
-                    max-width: 1200;
+                    max-width: 1200px;      
+
+                    .reg-login {
+                        @include desktop {
+                            display: flex;
+                            margin-left: 30px;
+                        }
+                    }
 
                 }
+
 
                 li {
                     list-style: none;
@@ -76,11 +85,24 @@
 
                     a {
                         text-decoration: none;
-                        padding: 0 10px;
+                        padding: 0 15px;
                         display: block;
                         background-color: $color-principal;
                         color: $texto-claro;
+                        height: 58px;
+                        line-height: 58px;
                         transition: all 0.25s linear;
+                        border: 1px solid $color-blanco;
+
+                        @include tablet {
+                            height: 70px;
+                            line-height: 70px;
+                        }
+
+                        @include desktop {
+                            border: none;
+                        }
+
 
                         &:hover, &:active {
                             background-color: $color-principal-claro;
@@ -96,8 +118,6 @@
             margin: 0 15px;
 
             @include desktop {
-                display: flex;
-                justify-content: flex-start;
                 width: 100%;
             }
 
@@ -116,9 +136,10 @@
                         padding: 0;
                     } 
                 }
-
-                .busqueda-input {
+                .none {
                     display: none;
+                }
+                .busqueda-input {
                     position: absolute;
                     border: 2px solid $texto-claro;
                     border-radius: 5px;
@@ -130,53 +151,23 @@
                     font-size: $font-size-base;
 
                     @include tablet {
-                        display: inline;
+                        // display: inline;
                         position: inherit;
                         width: inherit;
                         margin-left: 5px;
                     }
                 }
             }
-
-            .contenedor-loguin {
-                display: none;
-
-                @include desktop {
-                    display: flex;
-                }
-
-                li {
-                    list-style: none;
-                    text-align: center;
-
-                    a {
-                        text-decoration: none;
-                        padding: 0 10px;
-                        display: block;
-                        background-color: $color-principal;
-                        color: $texto-claro;
-                        transition: all 0.25s linear;
-
-                        &:hover, &:active {
-                            background-color: $color-principal-claro;
-                            color: $texto-claro;
-                            transition: all 0.25s linear;
-                        }
-                    }
-
-                    @include desktop {
-                        padding: 0 5px;
-                    }
-                }
-            }
-
         }
     }
 }
 
+.m-bottom {
+    margin-bottom: 35px;
+}
 
 .abrir {
-  display: flex !important; 
+    display: flex !important; 
 }
 
 .navigacion_toggle {

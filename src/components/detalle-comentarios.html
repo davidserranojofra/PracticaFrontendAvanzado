@@ -38,31 +38,34 @@
         <form novalidate class="comentarios-form">
 
             <div class="ui-status ideal">
+                <div class="contenedor">
 
-                <div class="agrupacion-inputs">
-                    <label for="nombre-form">Nombre: </label>
-                    <input type="text" name="nombre-form" id="nombre-form" placeholder="Nombre" required>
-                
-                    <label for="apellidos-form">Apellidos: </label>
-                    <input type="text" name="apellidos-form" placeholder="Apellidos" id="apellidos-form">    
-                
-                    <label for="email-form">E-mail: </label>
-                    <input type="email" name="email-form" placeholder="E-mail" id="email-form" required>
-                </div>
-                <div class="agrupacion-inputs">
-                    <label for="comentario-form">Comentario: </label>
-                    <textarea id="comentario-form" placeholder="Escribe tu comentario" name="comentario-form" required></textarea>
-                </div>
-                <div class="agrupacion-inputs">
+                    <div class="agrupacion-inputs">
+                        <label for="nombre-form">Nombre: </label>
+                        <input type="text" name="nombre-form" id="nombre-form" placeholder="Nombre" required>
+                    
+                        <label for="apellidos-form">Apellidos: </label>
+                        <input type="text" name="apellidos-form" placeholder="Apellidos" id="apellidos-form">    
+                    
+                        <label for="email-form">E-mail: </label>
+                        <input type="email" name="email-form" placeholder="E-mail" id="email-form" required>
+                    </div>
+                    <div class="agrupacion-inputs">
+                        <label for="comentario-form">Comentario: </label>
+                        <textarea id="comentario-form" placeholder="Escribe tu comentario" name="comentario-form" required></textarea>
+                    </div>
+                    <div class="agrupacion-inputs">
 
-                    <div class="ui-status error"><span>Error al enviar</span></div>
+                        <div class="ui-status error"><span>Error al enviar</span></div>
 
-                    <div class="ui-status loading"> 
-                        <i class="fa fa-spinner fa-pulse fa-2x fa-fw" aria-hidden="true"></i>
-                        <span>Enviando...</span>
+                        <div class="ui-status loading"> 
+                            <i class="fa fa-spinner fa-pulse fa-2x fa-fw" aria-hidden="true"></i>
+                            <span>Enviando...</span>
+                        </div>
+
+                        <button class="boton-form">Enviar comentario</button>
                     </div>
 
-                    <button class="boton-form">Enviar comentario</button>
                 </div>
 
             </div>
