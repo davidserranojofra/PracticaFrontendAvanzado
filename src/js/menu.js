@@ -29,18 +29,15 @@ let $ = require("jquery");
 		});
 		
 		//mostrar y ocultar input buscar en pantallas pequeñas
-		var anchoVentana = $(window).width();
-		console.log(anchoVentana);
 
 		$(".buscar-icono").on("click", function() {
 			$("#busqueda").toggle("fast", function() {
+				let anchoVentana = $(window).width();
 				if (anchoVentana <= 666) {
 					if ($(".m-bottom").length) {
 						$(".header-titulo-menu-container").removeClass("m-bottom");
-						console.log("si");
 					} else {
 						$(".header-titulo-menu-container").addClass("m-bottom");
-						console.log("no");
 					}
 				}
 				

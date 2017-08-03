@@ -58,13 +58,13 @@
 
             .boton-form {
                 @extend input;
-                background-color: $color-principal-claro;
+                background-color: darken($color-principal-claro, 25%);
                 color: $color-blanco;
                 font-weight: bold;
                 transition: all 0.25s;
 
                 &:active, &:hover {
-                    background: darken($color-principal-claro, 25%);
+                    background: $color-principal;
                 }
 
                 @include tablet {
