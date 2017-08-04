@@ -1,7 +1,7 @@
 //fuentes
 @import url('https://fonts.googleapis.com/css?family=Quicksand:400,700|Ubuntu:400,400i,700');
 
-@import "iconos/font-awesome.scss";
+@import "iconos/font-awesome";
 
 //General
 @import "reset";
@@ -9,16 +9,21 @@
 @import "generales";
 @import "responsive";
 
-//Componentes
+
+//componentes generales
 @import "components/titulo-con-menu";
+@import "components/_paginacion";
+@import "components/footer";
+@import "components/flecha-arriba";
+
+//Componentes
 @import "components/principal-section";
-@import "components/footer.scss";
-@import "components/_paginacion.scss";
+
 
 //Components de Detalles
-@import "components/detalle-body.scss";
-@import "components/_detalle-form.scss";
-@import "components/_detalle-comentarios.scss";
+@import "components/detalle-body";
+@import "components/_detalle-form";
+@import "components/_detalle-comentarios";
 
 
 

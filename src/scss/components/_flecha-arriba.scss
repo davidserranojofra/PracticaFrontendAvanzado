@@ -1,0 +1,30 @@
+.flecha{
+	position: fixed;
+	width: 60px;
+	height: 60px;
+	background-color: $color-principal;
+	z-index: 2;
+	right: -60px;
+	bottom: 60px;
+	border-radius: 8px 0 0 8px;
+	text-align: center;
+	line-height: 75px;
+	border-left: 2px solid $color-accento;
+	border-bottom: 2px solid $color-accento;
+	transition-property: right, background-color;
+	transition-duration: 0.5s;
+
+		&:hover{
+			background-color: $color-principal;
+			transition: background-color 0.5s;
+		}
+
+	.icono-flecha{
+		color: $color-oscuro;
+	}
+}
+
+.desplegar-flecha{	
+	right: 0;
+	transition: right 0.5s;
+}
