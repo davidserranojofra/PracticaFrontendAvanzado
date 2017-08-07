@@ -7,6 +7,7 @@ import UIManager from "./UIManager";
 import ComentsListManager from "./ComentsListManager";
 import EnvioComentManager from "./EnvioComentManager";
 import PubSub from "pubsub-js";
+import fecha from "./fechas";
 
 
 const servicioComentarios = new ServicioComentarios("/comentarios/");

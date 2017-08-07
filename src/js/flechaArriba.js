@@ -23,6 +23,5 @@ $(window).bind('scroll', function () {
 $('#flecha').on("click", function() {
     let irArriba = $(this).attr('href');
 
-    $('body, html').animate({scrollTop: $(irArriba).offset().top - 47}, 450);
-      console.log(irArriba);
+    $('body, html').animate({scrollTop: $(irArriba).offset().top}, 450);
 });
