@@ -42,16 +42,24 @@ body {
 }
 
 .boton {
-    border: 1px solid $color-accento;
+    border: 2px solid $color-accento;
     border-radius: 5px;
+    height: 50px;
+    width: 135px;
     transition: background-color 0.25s linear;
-    padding: 12px;
+    padding: 0 10px;
     font-size: $font-size-base;
     background-color: lighten($color-principal, 50%);
 
     &:active, &:hover {
-        background-color: $color-principal;
+        background-color: lighten($color-principal, 25%); 
         border: 1px solid $color-negro;
         transition: background-color 0.25s linear;
     }
+}
+
+.click-seleccionado {
+    border: 3px solid $color-principal;
+    border-radius: 50px;
+    padding: 2px;
 }

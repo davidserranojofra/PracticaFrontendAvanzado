@@ -36,7 +36,9 @@ section {
         min-height: 244px;
         background-color: $color-principal-claro;
         color: $texto-oscuro;
-        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         @include tablet {
             width: calc((100% / 3) - 2px);
@@ -50,10 +52,15 @@ section {
             min-height: 380px;
         }
 
-
-
         .comentarios {
             padding: 0 5px;
+            color: $color-negro;
+            transition: color 0.25s linear;
+
+            &:hover, &:active {
+                color: $color-principal;
+                transition: color 0.25s linear;
+            }
         }
 
         .foto-articulo {

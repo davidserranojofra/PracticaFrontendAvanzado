@@ -1,5 +1,5 @@
 let moment = require("moment");
-let $ = require('jquery');
+const $ = require('jquery');
 require('moment/locale/es');
 
 let fechas = $('.fecha-publicacion');

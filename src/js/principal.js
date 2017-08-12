@@ -1,6 +1,7 @@
 window.$ = window.jQuery = require("jquery");
 
 import menu from "./menu";
+import megusta from "./megusta";
 import flechaArriba from "./flechaArriba";
 import ServicioComentarios from "./ServicioComentarios";
 import UIManager from "./UIManager";
