@@ -18,9 +18,7 @@ $('.megusta').on('click', function() {
         } else {
             alert("Lo siento, la funcionalidad de megusta no funcionara en tu navegador, actualízalo o usa otro");
         }
-
     }  
-    console.log(localStorage);
 });
 
 //Recorro los elementos de localStorage y les aplico la clase seleccionado
