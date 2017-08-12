@@ -84,9 +84,14 @@ gulp.task("img", function(){
     gulp.src("src/img/*")
         .pipe(responsive({ // generamos las versiones responsive
             '*': [
-                { width: 255, rename: { suffix: "-255px"}},
-                { width: 337, rename: { suffix: "-337px"}},
-                { width: 658, rename: { suffix: "-658px"}}
+                { width: 220, rename: { suffix: "-220px"}},
+                { width: 318, rename: { suffix: "-318px"}},
+                { width: 370, rename: { suffix: "-370px"}},
+                { width: 675, rename: { suffix: "-675px"}},
+                { width: 740, rename: { suffix: "-740px"}},
+                { width: 1020, rename: { suffix: "-1020px"}},
+                { width: 1250, rename: { suffix: "-1250px"}},
+                { width: 1600, rename: { suffix: "-1600px"}}
             ]
         }))
         .pipe(imagemin()) // optimizamos el peso de las imágenes
