@@ -30,7 +30,7 @@ export default class EnvioComentManager extends UIManager {
 
     esValido() {
         const inputs = this.elemento.find("input");
-
+        const textArea = document.getElementById('comentario-form');
         for (let input of inputs) {
             if(input.checkValidity() == false) {
                 input.focus();
@@ -40,6 +40,24 @@ export default class EnvioComentManager extends UIManager {
                 return false;
             }
         }
+        if (textArea.checkValidity() == false) {
+            textArea.focus();
+            const errorMsg = textArea.validationMessage;
+            this.setErrorHtml(errorMsg);
+            this.setError();
+            return false;
+        }
+
+        let remplazarEspacios = textArea.value.replace(/\s\s+/g, ' ').trim();
+        let arrayPalabras = remplazarEspacios.split(' ');
+        let contador = arrayPalabras.length;
+        if (contador > 120) {
+            textArea.focus();
+            this.setErrorHtml("Lo siento, el máximo son 120 palabras y llevas " + contador + " palabras");
+            this.setError();
+            return false;
+        } 
+
         this.setIdeal();
         return true;
     }
@@ -90,5 +108,5 @@ export default class EnvioComentManager extends UIManager {
         super.setIdeal();
         this.activarForm();
     }
-
 }
+
