@@ -45,6 +45,17 @@ let $ = require("jquery");
 			});
 		});
 	});
+	
+	//Smooth Scrooll
+	
+
+	$('.ancla').on("click", function(){
+		let elementosMenu = document.getElementsByClassName("ancla");
+		 if (!elementosMenu.length - 1){
+			 let jumpId = $(this).attr('href');
+			 $('body, html').animate({scrollTop: $(jumpId).offset().top}, 450);
+		 }
+	 });
 
 //-- Movimiento de menu hamburguesa -->
 
