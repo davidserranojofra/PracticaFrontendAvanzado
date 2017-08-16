@@ -81,7 +81,7 @@ gulp.task("js", function(){
 
 // tarea que optimiza y crea las imágenes responsive
 gulp.task("img", function(){
-    gulp.src("src/img/*")
+    gulp.src("src/img/fotos/*")
         .pipe(responsive({ // generamos las versiones responsive
             '*': [
                 { width: 220, rename: { suffix: "-220px"}},
@@ -92,6 +92,15 @@ gulp.task("img", function(){
                 { width: 1020, rename: { suffix: "-1020px"}},
                 { width: 1250, rename: { suffix: "-1250px"}},
                 { width: 1600, rename: { suffix: "-1600px"}}
+            ]
+        }))
+        .pipe(imagemin()) // optimizamos el peso de las imágenes
+        .pipe(gulp.dest("build/img/"))
+
+    gulp.src("src/img/avatar/*")
+        .pipe(responsive({ // generamos las versiones responsive
+            '*': [
+                { width: 32, rename: { suffix: "-avatar-32px"}}
             ]
         }))
         .pipe(imagemin()) // optimizamos el peso de las imágenes
