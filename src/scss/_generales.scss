@@ -15,7 +15,11 @@ small {font-size: $font-size-small;}
 strong { font-weight: 700; }
 em { font-style: italic; }
 
-a { text-decoration: none;}
+a { 
+    text-decoration: none;
+    color: $color-negro;
+
+}
 
 body {
     background-color: $color-oscuro;
