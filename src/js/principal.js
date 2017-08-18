@@ -1,6 +1,7 @@
 window.$ = window.jQuery = require("jquery");
 
 import menu from "./menu";
+import menuNavegacion from "./menuNavegacion";
 import megusta from "./megusta";
 import flechaArriba from "./flechaArriba";
 import ServicioComentarios from "./ServicioComentarios";
@@ -14,9 +15,6 @@ const servicioComentarios = new ServicioComentarios("/comentarios/");
 const comentListUIManager = new UIManager(".comentarios");
 const comentsListManager = new ComentsListManager(servicioComentarios, comentListUIManager, PubSub);
 const envioComentManager = new EnvioComentManager(".comentarios-form", servicioComentarios, PubSub);
-
-
-console.log(window.location);
 
 mostrarComentarios();
 
