@@ -95,8 +95,9 @@ gulp.task("img", function(){
             ]
         }))
         .pipe(imagemin()) // optimizamos el peso de las imágenes
-        .pipe(gulp.dest("build/img/"))
+        .pipe(gulp.dest("build/img/"));
 
+    //rescala-optimización de avatares
     gulp.src("src/img/avatar/*")
         .pipe(responsive({ // generamos las versiones responsive
             '*': [
@@ -104,5 +105,15 @@ gulp.task("img", function(){
             ]
         }))
         .pipe(imagemin()) // optimizamos el peso de las imágenes
-        .pipe(gulp.dest("build/img/"))
+        .pipe(gulp.dest("build/img/"));
+    
+    //Rescala-optimización ico
+    gulp.src("src/img/ico/*")
+        .pipe(responsive({ // generamos las versiones responsive
+            '*': [
+                { width: 16, rename: { suffix: "-16px"}}
+            ]
+        }))
+        .pipe(imagemin()) // optimizamos el peso de las imágenes
+        .pipe(gulp.dest("build/img/"));
 });

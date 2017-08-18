@@ -41,17 +41,17 @@
             <div class="contenedor">
 
                 <div class="agrupacion-inputs">
-                    <label for="nombre-form">Nombre: </label>
+                    <label for="nombre-form">*Nombre:</label>
                     <input type="text" name="nombre-form" id="nombre-form" placeholder="Nombre" required>
                     
                     <label for="apellidos-form">Apellidos: </label>
                     <input type="text" name="apellidos-form" placeholder="Apellidos" id="apellidos-form">    
                     
-                    <label for="email-form">E-mail: </label>
+                    <label for="email-form">*E-mail: </label>
                     <input type="email" name="email-form" placeholder="E-mail" id="email-form" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
                 </div>
                 <div class="agrupacion-inputs">
-                    <label for="comentario-form">Comentario: </label>
+                    <label for="comentario-form">*Comentario: </label>
                     <textarea id="comentario-form" placeholder="Escribe máximo 120 palabras" class="comentario-form" name="comentario-form" pattern="" required></textarea>
                 </div>
                 <div class="agrupacion-inputs">
@@ -65,6 +65,7 @@
 
                     <!-- <button id="enviarComentario" class="boton-form">Enviar comentario</button> -->
                     <input type="submit" class="boton-form espaciado" id="enviarComentario" value="Enviar comentario">
+                    <small class="comentario-form">Los campos marcados con * son obligatorios</small>
                 </div>
 
             </div>

@@ -10,13 +10,14 @@
         transition: all 0.25s linear;
 
         &:active {
-            color: $color-accento;
+            color: darken($color-accento, 15%);
             transition: all 0.25s linear;
         }
 
-        &:hover {
-            color: $color-accento;
-            transition: all 0.25s linear;
+        @include desktop {
+            &:hover {
+                transition: all 0.25s linear;
+            }
         }
     }
 }

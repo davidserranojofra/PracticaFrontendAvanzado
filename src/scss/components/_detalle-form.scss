@@ -62,14 +62,23 @@
                 color: $color-blanco;
                 font-weight: bold;
                 transition: all 0.25s;
+                cursor: pointer;
 
-                &:active, &:hover {
+                &:active {
                     background: $color-principal;
+                    border: 1px solid $color-blanco;
                 }
 
                 @include tablet {
                     width: 100%;
                     flex-grow: 2;
+                }
+
+                @include desktop {
+                    &:hover {
+                        background: $color-principal;
+                        border: 1px solid $color-blanco;
+                    }
                 }
             }
         }

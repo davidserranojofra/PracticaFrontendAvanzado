@@ -16,6 +16,8 @@ const comentsListManager = new ComentsListManager(servicioComentarios, comentLis
 const envioComentManager = new EnvioComentManager(".comentarios-form", servicioComentarios, PubSub);
 
 
+console.log(window.location);
+
 mostrarComentarios();
 
 function mostrarComentarios() {
