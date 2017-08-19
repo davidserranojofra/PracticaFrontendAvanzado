@@ -25,7 +25,6 @@ export default class EnvioComentManager extends UIManager {
     validateAndSendData() {
         if (this.esValido()) {
             this.enviar();
-
         }
     }
 
