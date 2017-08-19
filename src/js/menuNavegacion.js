@@ -1,5 +1,4 @@
 const $ = require("jquery");
-
 const ruta = window.location.pathname;
 
 if (ruta != "/") {

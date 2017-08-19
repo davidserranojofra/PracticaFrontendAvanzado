@@ -1,3 +1,4 @@
+let moment = require("moment");
 const $ = require("jquery");
 
 import UIManager from "./UIManager";
@@ -64,13 +65,14 @@ export default class EnvioComentManager extends UIManager {
 
     enviar() {
         this.setLoading();
+        let fechaAhora = moment();
 
         const comentario = {
             nombre: this.elemento.find("#nombre-form").val(),
             apellidos: this.elemento.find("#apellidos-form").val(),
             email: this.elemento.find("#email-form").val(),
             comentario: this.elemento.find("#comentario-form").val(),
-            fecha: "hace 8 dias"
+            fecha: fechaAhora.format('LLL')
         };
         this.servicioComentarios.crearOActualizar(comentario, success => {
             this.pubSub.publish("nuevo-comentario", comentario);
