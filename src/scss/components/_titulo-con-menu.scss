@@ -52,7 +52,9 @@
             }
 
             .cerrado {
-                display: none;
+                visibility: hidden;
+                display: flex;
+                opacity: 0;
                 justify-content: space-around;
                 flex-direction: column;
                 position: absolute;
@@ -60,14 +62,22 @@
                 top: 70px;
                 right: 0;
                 z-index: 2;
+                transition: opacity 0.25s linear;
+
+                @include tablet {
+                    transition: none;
+                }
 
                 @include desktop {
+                    visibility: visible;
+                    opacity: 1;
                     position: inherit;
                     display: flex;
                     flex-direction: row;
                     width: 100%;
                     top: 0;
-                    max-width: 1200px;      
+                    max-width: 1200px; 
+                    transition: none;     
 
                     .reg-login {
                         @include desktop {
@@ -109,6 +119,12 @@
                         }
                     }
                 }
+            }
+
+            .abrir {
+                visibility: visible;
+                opacity: 0.95;
+                transition: all 0.25s linear;
             }
         } 
 
@@ -165,10 +181,6 @@
 
 .m-bottom {
     margin-bottom: 35px;
-}
-
-.abrir {
-    display: flex !important; 
 }
 
 .navigacion_toggle {
