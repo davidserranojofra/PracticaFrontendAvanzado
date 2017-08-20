@@ -112,10 +112,18 @@
                             min-width: 87px;
                         }
 
-                        &:hover, &:active {
+                        &:active {
                             background-color: $color-principal-claro;
                             color: $texto-claro;
                             transition: all 0.25s linear;
+                        }
+
+                        @include desktop {
+                            &:hover {
+                                background-color: $color-principal-claro;
+                                color: $texto-claro;
+                                transition: all 0.25s linear;
+                            }
                         }
                     }
                 }
