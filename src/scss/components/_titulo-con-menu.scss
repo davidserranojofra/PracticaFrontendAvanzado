@@ -9,9 +9,9 @@
     line-height: 70px;
     width: 100%;
 
+
     h1 {
         padding-left: 2px;
-        width: 48%;
         text-align: center;
         font-size: $font-size-h1;
 
@@ -29,16 +29,65 @@
         display: flex;
         justify-content: flex-end;
 
+
+
         @include desktop {
             background-color: $color-principal;
             width: 100%;
             justify-content: center;
         }
 
+        .registros {
+            margin: 0 15px;
+
+            @include desktop {
+                width: 100%;
+            }
+
+            .busqueda-container {
+                padding: 0 0px;
+
+                @include desktop {
+                    margin-left: 15px;
+                }
+
+                .lupa {
+                    padding: 10px;
+
+                    @include tablet {
+                        padding: 0;
+                    } 
+                }
+                .none {
+                    display: none;
+                }
+                .busqueda-input {
+                    position: absolute;
+                    border: 2px solid $color-principal-claro;
+                    border-radius: 5px;
+                    top: 70px;
+                    left: 0;
+                    height: 35px;
+                    padding: 15px;
+                    width: 100%;
+                    font-size: $font-size-base;
+
+                    &:focus {
+                        outline-color: $color-principal;
+                    }
+
+                    @include tablet {
+                        position: inherit;
+                        width: inherit;
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+
         .menu-principal {
-            order: 1;
+            // order: 1;
             margin-left: 10px;
-            flex: 1;
 
             .fueramenu {
                 background-color: $color-principal-claro;
@@ -134,56 +183,7 @@
                 opacity: 0.95;
                 transition: all 0.25s linear;
             }
-        } 
-
-        .registros {
-            margin: 0 15px;
-
-            @include desktop {
-                width: 100%;
-            }
-
-            .busqueda-container {
-                padding: 0 0px;
-
-                @include desktop {
-                    order: 1;
-                    margin-left: 15px;
-                }
-
-                .lupa {
-                    padding: 10px;
-
-                    @include tablet {
-                        padding: 0;
-                    } 
-                }
-                .none {
-                    display: none;
-                }
-                .busqueda-input {
-                    position: absolute;
-                    border: 2px solid $color-principal-claro;
-                    border-radius: 5px;
-                    top: 70px;
-                    left: 0;
-                    height: 35px;
-                    padding: 15px;
-                    width: 100%;
-                    font-size: $font-size-base;
-
-                    &:focus {
-                        outline-color: $color-principal;
-                    }
-
-                    @include tablet {
-                        position: inherit;
-                        width: inherit;
-                        margin-left: 5px;
-                    }
-                }
-            }
-        }
+        }         
     }
 }
 

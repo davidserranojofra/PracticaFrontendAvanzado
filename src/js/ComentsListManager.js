@@ -45,7 +45,7 @@ export default class ComentsListManager {
                             <br>
                             <p>${coment.email}</p>
                             <br>
-                            <p>${coment.fecha}</p>
+                            <p> ${coment.fecha}</p>
                         </div>
                         <div class="comentario-persona">${coment.comentario}</div>
                     </div>`;

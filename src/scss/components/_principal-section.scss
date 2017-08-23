@@ -1,5 +1,5 @@
 section {
-    width: 100vw;
+    width: 100%;
     max-width: 1300px;
 }
 
@@ -52,8 +52,14 @@ section {
             min-height: 380px;
         }
 
+        .ie11 {
+            min-height: 230px;
+        }
+
         .ir-detalle {
             color: $color-negro;
+            
+            
 
             .video-responsive {
                 position: relative;

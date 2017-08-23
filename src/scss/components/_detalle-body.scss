@@ -29,12 +29,13 @@
 
         @include tablet {
             flex-direction: row;
-            align-items: flex-start;
             padding: 10px 10px;
+            align-items: flex-start;
         } 
 
         .media {
             padding: 0 2px;
+            min-height: 244px;
             
             @include tablet {
                 padding: 0 10px 0 0;
