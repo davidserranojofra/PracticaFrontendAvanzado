@@ -30,9 +30,14 @@ export default class ComentsListManager {
 
     renderizarComentarios(comentarios) {
         let html = "";
+        
+// De esta forma no funciona en internet explorer 11
+        // for (let coment of comentarios) {
+        //     html += this.renderizarComentario(coment);
+        // }
 
-        for (let coment of comentarios) {
-            html += this.renderizarComentario(coment);
+        for (let i = 0; i < comentarios.length; i++) {
+            html += this.renderizarComentario(comentarios[i]);
         }
             
         this.uiManager.setIdealHtml(html); 
