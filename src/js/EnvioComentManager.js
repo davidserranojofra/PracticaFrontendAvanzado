@@ -31,15 +31,27 @@ export default class EnvioComentManager extends UIManager {
     esValido() {
         const inputs = this.elemento.find("input");
         const textArea = document.getElementById('comentario-form');
-        for (let input of inputs) {
-            if(input.checkValidity() == false) {
-                input.focus();
-                const errorMsg = input.validationMessage;
+        
+// Funciona perfecto menos en IE11
+        // for (let input of inputs) {
+            // if(input.checkValidity() == false) {
+            //     input.focus();
+            //     const errorMsg = input.validationMessage;
+            //     this.setErrorHtml(errorMsg);
+            //     this.setError();
+            //     return false;
+            // }
+        // }
+        for (let i = 0; i < inputs.length; i++) {
+            if(inputs[i].checkValidity() == false) {
+                inputs[i].focus();
+                const errorMsg = inputs[i].validationMessage;
                 this.setErrorHtml(errorMsg);
                 this.setError();
                 return false;
             }
         }
+
         if (textArea.checkValidity() == false) {
             textArea.focus();
             const errorMsg = textArea.validationMessage;
@@ -65,7 +77,6 @@ export default class EnvioComentManager extends UIManager {
     enviar() {
         this.setLoading();
         let fechaAhora = moment();
-
         const comentario = {
             nombre: this.elemento.find("#nombre-form").val(),
             apellidos: this.elemento.find("#apellidos-form").val(),
@@ -84,7 +95,16 @@ export default class EnvioComentManager extends UIManager {
     }
 
     resetForm() {
-        this.elemento[0].reset();
+        const esIE = /*@cc_on!@*/false || !!document.documentMode;
+        if(esIE) {
+            console.log("entra");
+            this.elemento.find("#nombre-form").val('');
+            this.elemento.find("#apellidos-form").val('');
+            this.elemento.find("#email-form").val('');
+            this.elemento.find("#comentario-form").val('');   
+        } else {
+            this.elemento[0].reset();
+        }
     }
 
     desactivarForm() {
