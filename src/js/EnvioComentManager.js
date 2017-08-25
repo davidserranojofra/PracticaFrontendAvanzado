@@ -13,17 +13,21 @@ export default class EnvioComentManager extends UIManager {
 
     init() {
         this.setupSubmitEventHandler();
+        console.log('0 : init()');
     }
 
     setupSubmitEventHandler() {
         this.elemento.on("submit", () => {
+            console.log('1 : setupSubmitEventHandler');
             this.validateAndSendData();
             return false;
         });
     }
 
     validateAndSendData() {
+        console.log('2 : validateAndSendData');
         if (this.esValido()) {
+            console.log('2,5 : validateAndSendData dentro del IF{}');
             this.enviar();
         }
     }
@@ -31,6 +35,7 @@ export default class EnvioComentManager extends UIManager {
     esValido() {
         const inputs = this.elemento.find("input");
         const textArea = document.getElementById('comentario-form');
+        console.log('3 : esvalido()');
         
 // Funciona perfecto menos en IE11
         // for (let input of inputs) {
@@ -76,6 +81,7 @@ export default class EnvioComentManager extends UIManager {
 
     enviar() {
         this.setLoading();
+        console.log('4 : enviar()');
         let fechaAhora = moment();
         const comentario = {
             nombre: this.elemento.find("#nombre-form").val(),
@@ -87,6 +93,7 @@ export default class EnvioComentManager extends UIManager {
         this.servicioComentarios.crearOActualizar(comentario, success => {
             this.pubSub.publish("nuevo-comentario", comentario);
             this.resetForm();
+            console.log('4,5 : enviar() dentro del crearOActualizar()');
             this.setIdeal();
         }, error => {
             this.setErrorHtml("Error al guardar en el servidor");
@@ -95,6 +102,7 @@ export default class EnvioComentManager extends UIManager {
     }
 
     resetForm() {
+        console.log('5 : resetForm()');
         const esIE = /*@cc_on!@*/false || !!document.documentMode;
         if(esIE) {
             console.log("entra");
@@ -108,14 +116,17 @@ export default class EnvioComentManager extends UIManager {
     }
 
     desactivarForm() {
+        console.log('desactiva formulario');
         this.elemento.find("input, button").attr("disabled", true);
     }
 
     activarForm() {
+        console.log('activa formulario');
         this.elemento.find("input, button").attr("disabled", false);
     }
 
     setLoading() {
+        console.log('cargando formulario');
         super.setLoading();
         this.desactivarForm();
     }

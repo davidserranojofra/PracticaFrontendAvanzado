@@ -14,13 +14,14 @@
 	transition-property: right, background-color;
 	transition-duration: 0.5s;
 
-		&:hover{
-			background-color: $color-principal;
-			transition: background-color 0.5s;
-		}
-
 	.icono-flecha{
 		color: $color-oscuro;
+		transition: color 0.5s linear;
+
+		&:hover{
+			color: $color-negro;
+			transition: color 0.5s linear;
+		}
 	}
 }
 

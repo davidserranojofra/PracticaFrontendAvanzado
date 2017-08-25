@@ -81,14 +81,14 @@
                 .none {
                     display: none;
                 }
+                
                 .busqueda-input {
                     position: absolute;
                     border: 2px solid $color-principal-claro;
                     border-radius: 5px;
                     top: 70px;
                     left: 0;
-                    height: 35px;
-                    padding: 15px;
+                    padding: 5px;
                     width: 100%;
                     font-size: $font-size-base;
 
