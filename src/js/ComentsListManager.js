@@ -15,7 +15,7 @@ export default class ComentsListManager {
 
     cargarComentarios() {
         this.servicioComentarios.listar (comentarios => {
-            if (comentarios.lenght == 0) {
+            if (comentarios.length == 0) {
                 this.uiManager.setEmpty();
             } else {
                 this.renderizarComentarios(comentarios);

@@ -79,14 +79,21 @@ section {
             }
         }
 
-        .comentarios {
+        .apartado-comentarios {
             padding: 0 5px;
             color: $color-negro;
-            transition: color 0.25s linear;
+            transition: color 0.15s linear;
 
-            &:hover, &:active {
+            &:active {
                 color: $color-principal;
-                transition: color 0.25s linear;
+                transition: color 0.15s linear;
+            }
+
+            @include desktop {
+                &:hover {
+                    color: $color-principal;
+                    transition: color 0.15s linear;
+                }
             }
         }
 

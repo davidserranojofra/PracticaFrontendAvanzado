@@ -1,8 +1,16 @@
 .comentarios {
+    background-color: $color-negro;
 
     .ui-status { display: none; }
     &.empty {
-        .ui-status.empty { display: block; }
+        .ui-status.empty { 
+            display: block; 
+
+            .contenedor {
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
     }
     &.loading {
         .ui-status.loading { display: block; }
@@ -33,16 +41,14 @@
         border-radius: 15px;
     }
 
-    .cabecera-comentarios {
-        @include desktop {
-            margin-left: 44px;
-        }
-    }
-
     .mostrar {
         padding: 15px;
-        margin: 25px 5px;
+        margin: 25px 0px;
         color: $color-blanco;
+
+        @include desktop {
+            margin: 25px 40px;
+        }
     }
 
     .input-error {
@@ -56,7 +62,11 @@
 
 .cabecera-comentarios {
     color: $color-blanco;
-    padding: 10px 5px;
+    padding: 10px 10px;
+
+    @include desktop {
+        margin-left: 44px;
+    }
 }
 
 .coments {

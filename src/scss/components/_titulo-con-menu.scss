@@ -40,6 +40,26 @@
         .registros {
             margin: 0 15px;
 
+            .boton-lupa {
+                
+                height: 50px;
+                width: 50px;
+                transition: all 0.15s linear;
+                padding: 10px 10px;
+            
+                &:active {
+                    color: $color-oscuro;
+                    transition: all 0.15s linear;
+                }
+            
+                @include desktop {
+                    &:hover {
+                        color: $color-oscuro;
+                        transition: all 0.15s linear;
+                    }
+                }
+            }
+
             @include desktop {
                 width: 100%;
             }
@@ -169,7 +189,7 @@
 
                         @include desktop {
                             &:hover {
-                                background-color: $color-principal-claro;
+                                background-color: $color-oscuro;
                                 color: $texto-claro;
                                 transition: all 0.25s linear;
                             }

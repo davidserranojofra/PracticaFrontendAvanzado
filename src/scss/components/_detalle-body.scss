@@ -8,6 +8,24 @@
         @include desktop {
             margin-top: 70px;
         }
+        
+        .icono-coment {
+            padding: 0 5px;
+            color: $color-negro;
+            transition: color 0.15s linear;
+
+            &:active {
+                color: $color-principal;
+                transition: color 0.15s linear;
+            }
+
+            @include desktop {
+                &:hover {
+                    color: $color-principal;
+                    transition: color 0.15s linear;
+                }
+            }
+        }
     }
 
     .titulo-seccion {
@@ -63,7 +81,7 @@
                 margin-top: 10px;
             }
 
-            a{
+            a, {
                 color: $color-blanco;
                 transition: color 0.25s linear;
 

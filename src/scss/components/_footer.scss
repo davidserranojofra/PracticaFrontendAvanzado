@@ -16,6 +16,7 @@
 
         @include desktop {
             &:hover {
+                color: darken($color-accento, 15%);
                 transition: all 0.25s linear;
             }
         }
