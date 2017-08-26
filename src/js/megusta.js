@@ -5,21 +5,31 @@ mostrarItemsSeleccionados();
 
 //Al hacer click muestro como seleccionado y agrego a localstorage y a la inversa
 $('.megusta').on('click', function() {
-
-    if(this.children[0].classList.contains('click-seleccionado')) {
+    
+    if(this.children[0].classList.contains('click-seleccionado')) {     
         
         this.children[0].classList.remove("click-seleccionado");
-        localStorage.removeItem(this.getAttribute('data-id'));
+        borrarSeleccionado(this.getAttribute('data-id'));
+
     } else {
-        
+
         this.children[0].classList.add("click-seleccionado");
+
         if(typeof(Storage) !== "undefined") {
-            localStorage.setItem(this.getAttribute('data-id'), true);
+            gueardarSeleccionado(this.getAttribute('data-id'));
         } else {
-            alert("Lo siento, la funcionalidad de megusta no funcionara en tu navegador, actualízalo o usa otro");
+            alert("Lo siento, la funcionalidad de megusta no funcionará en tu navegador, actualízalo o usa otro");
         }
     }  
 });
+
+function gueardarSeleccionado(seleccionado) {
+    localStorage.setItem(seleccionado, true);
+}
+
+function borrarSeleccionado(selecccionado) {
+    localStorage.removeItem(selecccionado);
+}
 
 //Recorro los elementos de localStorage y les aplico la clase seleccionado
 function mostrarItemsSeleccionados() {
@@ -32,3 +42,18 @@ function mostrarItemsSeleccionados() {
         megusta[clave].children[0].classList.add("click-seleccionado");
     }
 }
+
+//Código sin refactorizar ya que no se si vale la pena.
+// $('.megusta').on('click', function() {
+//     if(this.children[0].classList.contains('click-seleccionado')) {
+//         this.children[0].classList.remove("click-seleccionado");
+//         localStorage.removeItem(this.getAttribute('data-id'));
+//     } else {
+//         this.children[0].classList.add("click-seleccionado");
+//         if(typeof(Storage) !== "undefined") {
+//             localStorage.setItem(this.getAttribute('data-id'), true);
+//         } else {
+//             alert("Lo siento, la funcionalidad de megusta no funcionara en tu navegador, actualízalo o usa otro");
+//         }
+//     }  
+// });

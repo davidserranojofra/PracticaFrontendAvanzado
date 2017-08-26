@@ -48,7 +48,6 @@ const $ = require("jquery");
 		$("#nav-toggle").removeClass('is-active');
 	}
 
-	
 	//Smooth Scrooll
 	$('.ancla').on("click", function(){
 		let elementosMenu = document.getElementsByClassName("ancla");
