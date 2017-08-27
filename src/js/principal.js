@@ -10,6 +10,7 @@ import ComentsListManager from "./ComentsListManager";
 import EnvioComentManager from "./EnvioComentManager";
 import PubSub from "pubsub-js";
 import fecha from "./fechas";
+import paginacion from "./paginacion";
 
 const servicioComentarios = new ServicioComentarios("/comentarios/");
 const comentListUIManager = new UIManager(".comentarios");
