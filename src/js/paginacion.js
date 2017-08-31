@@ -9,10 +9,8 @@ const siguiente = document.getElementById('btn-siguiente');
 const rutaPaginacion = window.location.pathname;
 
 if (rutaPaginacion == "/") {
-
-atras.addEventListener('click', btnClickAtras);
-siguiente.addEventListener('click', btnClickSiguiente);
-
+  atras.addEventListener('click', btnClickAtras);
+  siguiente.addEventListener('click', btnClickSiguiente);
 }
 
 function btnClickAtras() {
