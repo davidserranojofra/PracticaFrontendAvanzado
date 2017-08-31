@@ -16,8 +16,12 @@ const servicioComentarios = new ServicioComentarios("/comentarios/");
 const comentListUIManager = new UIManager(".comentarios");
 const comentsListManager = new ComentsListManager(servicioComentarios, comentListUIManager, PubSub);
 const envioComentManager = new EnvioComentManager(".comentarios-form", servicioComentarios, PubSub);
+const ruta = window.location.pathname;
 
-mostrarComentarios();
+if (ruta == "/detalle.html" || ruta == "/detalle.html#comentarios") { /////////////////////////////////////////// OJO pensar esto bien!!!!!!!!!!!!!!!!!!
+    
+    mostrarComentarios();
+}
 
 function mostrarComentarios() {
     let posicionScroll = $(window);
@@ -32,9 +36,21 @@ function mostrarComentarios() {
         //si no cuando llegues abajo muestralos
         posicionScroll.scroll(function() {
             if(posicionScroll.scrollTop() == (altoDocumento - altoVentana)) {
-                comentsListManager.init();
-                envioComentManager.init();
+                cargarComentariosSoloUnaVez();
             }
         }); 
+    }
+}
+
+// variable de control para que IE11 al hacer scroll massivo no me cargue envioComentManager varias veces 
+// ya que a la hora de poner un comentario luego lo publica tantas veces como lo haya cargado.
+// Los demas navegadores podria ponerlo directamente sin la funcion ya que gestionan bien la carga.
+let ejecutado = false;
+
+function cargarComentariosSoloUnaVez() {
+    if (ejecutado == false) {
+        comentsListManager.init();
+        envioComentManager.init();
+        ejecutado = true;
     }
 }

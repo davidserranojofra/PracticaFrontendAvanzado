@@ -54,12 +54,9 @@ section {
 
         .ie11 {
             min-height: 230px;
-        }
 
-        .ir-detalle {
-            color: $color-negro;
-            
-            
+        }
+        .container-video {
 
             .video-responsive {
                 position: relative;
@@ -77,6 +74,10 @@ section {
                 width: 100%;
                 height: 100%;
             }
+        }
+
+        .ir-detalle {
+            color: $color-negro;
         }
 
         .apartado-comentarios {
@@ -114,16 +115,22 @@ section {
     }
 }
 
-.quien-publica {
+.container-publicador {
     display: flex;
-    padding: 5px 5px;
-            
-    .datos-publicador {
-        padding: 0 5px;
-        align-self: center;
+    justify-content: space-between;
+    padding: 4px 0;
 
-        .fecha-publicacion {
-            font-size: $font-size-small;
+    .quien-publica {
+        display: flex;
+        padding: 5px 5px;
+                
+        .datos-publicador {
+            padding: 0 5px;
+            align-self: center;
+    
+            .fecha-publicacion {
+                font-size: $font-size-small;
+            }
         }
     }
 }
