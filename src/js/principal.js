@@ -34,19 +34,12 @@ function mostrarComentarios() {
     } else {
         //si no cuando llegues abajo muestralos
         posicionScroll.scroll(function() {
+            console.log(posicionScroll.scrollTop());
             if(posicionScroll.scrollTop() >= (altoDocumento - altoVentana) - 100) {
-                cargarComentariosSoloUnaVez();
+                comentsListManager.init();
+                envioComentManager.init();
+                $(window).off("scroll");
             }
         }); 
-    }
-}
-
-let ejecutado = false;
-    
-function cargarComentariosSoloUnaVez() {
-    if (ejecutado == false) {
-        comentsListManager.init();
-        envioComentManager.init();
-        ejecutado = true;
     }
 }
