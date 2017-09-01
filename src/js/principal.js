@@ -34,7 +34,6 @@ function mostrarComentarios() {
     } else {
         //si no cuando llegues abajo muestralos
         posicionScroll.scroll(function() {
-            console.log(posicionScroll.scrollTop());
             if(posicionScroll.scrollTop() >= (altoDocumento - altoVentana) - 100) {
                 comentsListManager.init();
                 envioComentManager.init();

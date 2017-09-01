@@ -13,21 +13,17 @@ export default class EnvioComentManager extends UIManager {
 
     init() {
         this.setupSubmitEventHandler();
-        console.log('0 : init()');
     }
 
     setupSubmitEventHandler() {
         this.elemento.on("submit", () => {
-            console.log('1 : setupSubmitEventHandler');
             this.validateAndSendData();
             return false;
         });
     }
 
     validateAndSendData() {
-        console.log('2 : validateAndSendData');
         if (this.esValido()) {
-            console.log('2,5 : validateAndSendData dentro del IF{}');
             this.enviar();
         }
     }
@@ -35,9 +31,13 @@ export default class EnvioComentManager extends UIManager {
     esValido() {
         const inputs = this.elemento.find("input");
         const textArea = document.getElementById('comentario-form');
-        console.log('3 : esvalido()');
         
 // Funciona perfecto menos en IE11
+// instalar `babel-polyfill` con npm y haz el import o el require de `babel-polyfill` al principio 
+//del entrypoint (principal.js)
+//no lo he usado aquí porque dobla el peso del Js y ya que lo tengo covertido para 2 veces que lo uso lo dejare así
+//para el siguiente sin duda lo usaré.
+
         // for (let input of inputs) {
             // if(input.checkValidity() == false) {
             //     input.focus();
@@ -47,6 +47,7 @@ export default class EnvioComentManager extends UIManager {
             //     return false;
             // }
         // }
+        
         for (let i = 0; i < inputs.length; i++) {
             if(inputs[i].checkValidity() == false) {
                 inputs[i].focus();
@@ -81,7 +82,6 @@ export default class EnvioComentManager extends UIManager {
 
     enviar() {
         this.setLoading();
-        console.log('4 : enviar()');
         let fechaAhora = moment();
         const comentario = {
             nombre: this.elemento.find("#nombre-form").val(),
@@ -93,7 +93,6 @@ export default class EnvioComentManager extends UIManager {
         this.servicioComentarios.crearOActualizar(comentario, success => {
             this.pubSub.publish("nuevo-comentario", comentario);
             this.resetForm();
-            console.log('4,5 : enviar() dentro del crearOActualizar()');
             this.setIdeal();
         }, error => {
             this.setErrorHtml("Error al guardar en el servidor");
@@ -105,7 +104,6 @@ export default class EnvioComentManager extends UIManager {
         console.log('5 : resetForm()');
         const esIE = /*@cc_on!@*/false || !!document.documentMode;
         if(esIE) {
-            console.log("entra");
             this.elemento.find("#nombre-form").val('');
             this.elemento.find("#apellidos-form").val('');
             this.elemento.find("#email-form").val('');
@@ -116,17 +114,14 @@ export default class EnvioComentManager extends UIManager {
     }
 
     desactivarForm() {
-        console.log('desactiva formulario');
         this.elemento.find("input, button").attr("disabled", true);
     }
 
     activarForm() {
-        console.log('activa formulario');
         this.elemento.find("input, button").attr("disabled", false);
     }
 
     setLoading() {
-        console.log('cargando formulario');
         super.setLoading();
         this.desactivarForm();
     }

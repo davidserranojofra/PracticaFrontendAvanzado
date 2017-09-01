@@ -76,23 +76,39 @@
 
     .mostrar-comentarios-enviados {
         display: flex;
+        flex-direction: column;
         border-top: 2px solid $color-principal;
         padding: 10px 0;
         color: $color-blanco;
 
         @include tablet {
+            flex-direction: row;
             padding: 10px 5px;
         }
 
         .datos-persona {
-            width: 30%;
-            padding: 5px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100%;
+            padding: 10px 5px;
+
+            @include tablet {
+                width: 30%;
+                flex-direction: column;
+                justify-content: flex-start;
+            }
         }
 
         .comentario-persona {
-            width: 70%;
+            width: 100%;
             padding: 5px;
             text-align: justify;
+
+            @include tablet {
+                width: 70%;
+                margin-left: 20px;
+            }
         }
     }
 }
