@@ -1,6 +1,5 @@
 //fuentes
 @import url('https://fonts.googleapis.com/css?family=Quicksand:400,700|Ubuntu:400,400i,700');
-
 @import "iconos/font-awesome";
 
 //General
@@ -8,8 +7,6 @@
 @import "variables";
 @import "responsive";
 @import "generales";
-
-
 
 //componentes generales
 @import "components/titulo-con-menu";
@@ -20,13 +17,7 @@
 //Componentes
 @import "components/principal-section";
 
-
 //Components de Detalles
 @import "components/detalle-body";
 @import "components/_detalle-form";
 @import "components/_detalle-comentarios";
-
-
-
-
-

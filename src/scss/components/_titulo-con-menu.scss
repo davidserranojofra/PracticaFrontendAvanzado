@@ -29,8 +29,6 @@
         display: flex;
         justify-content: flex-end;
 
-
-
         @include desktop {
             background-color: $color-principal;
             width: 100%;
@@ -41,7 +39,6 @@
             margin: 0 15px;
 
             .boton-lupa {
-                
                 height: 50px;
                 width: 50px;
                 transition: all 0.15s linear;

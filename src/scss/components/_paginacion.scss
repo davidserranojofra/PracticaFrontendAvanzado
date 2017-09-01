@@ -5,28 +5,8 @@
     color: $color-blanco;
     height: 60px;
     padding: 30px;
-
-
-    // .pagina {
-    //     color: $color-blanco;
-    //     text-decoration: none;
-    //     transition: all 0.25s linear;
-
-    //     &:active {
-    //         color: $color-accento;
-    //         transition: all 0.25s linear;
-    //     }
-
-    //     &:hover {
-    //         color: $color-accento;
-    //         transition: all 0.25s linear;
-    //     }
-    // }
 }
 
-
-
-////////////////////////////////////////////////////
 .numeracion {
     z-index: 10;
     color: $color-negro;
@@ -98,7 +78,6 @@
   .transition-next .little-dot--first {
     animation: little-dot--last--animation 0.3s forwards;
   }
-  
   
   @keyframes little-dot--last--animation {
     0% { opacity: 1; }

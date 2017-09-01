@@ -31,7 +31,10 @@ export default class ComentsListManager {
     renderizarComentarios(comentarios) {
         let html = "";
         
-// De esta forma no funciona en internet explorer 11
+// Funciona perfecto menos en IE11 SOLUCION:
+// instalar `babel-polyfill` con npm y haz el import o el require de `babel-polyfill` al principio 
+//del entrypoint (principal.js)
+
         // for (let coment of comentarios) {
         //     html += this.renderizarComentario(coment);
         // }

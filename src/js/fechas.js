@@ -11,16 +11,6 @@ for (let i = 0; i < fechas.length; i++) {
     fechasArray.push(fechas[i].textContent);
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////
-// let comentFechas = $('.coment-fecha');
-
-// let comentFechasArray = [];
-// for (let i = 0; i < comentfechas.length; i++) {
-//     fechasArray.push(comentfechas[i].textContent);
-//     console.log(comentFechasArray);
-// }
-///////////////////////////////////////////////////////////////////////////////////////////
-
 mostrarFechaTiempoReal();
 
 function mostrarFechaTiempoReal() {

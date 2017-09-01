@@ -9,8 +9,8 @@ const siguiente = document.getElementById('btn-siguiente');
 const rutaPaginacion = window.location.pathname;
 
 if (rutaPaginacion == "/") {
-  atras.addEventListener('click', btnClickAtras);
-  siguiente.addEventListener('click', btnClickSiguiente);
+    atras.addEventListener('click', btnClickAtras);
+    siguiente.addEventListener('click', btnClickSiguiente);
 }
 
 function btnClickAtras() {
@@ -26,17 +26,16 @@ function btnClickSiguiente() {
 }
 
 function cleanClasses() {
-  if(paginationWrapper.classList.contains('transition-next')) {
-    paginationWrapper.classList.remove('transition-next');
-    contador++;
-    $('.numeracion').html(contador);
-  } else if(paginationWrapper.classList.contains('transition-prev')) {
-    paginationWrapper.classList.remove('transition-prev');
-    contador--;
-    $('.numeracion').html(contador);
-  }
+    if(paginationWrapper.classList.contains('transition-next')) {
+          paginationWrapper.classList.remove('transition-next');
+          contador++;
+          $('.numeracion').html(contador);
+    } else if(paginationWrapper.classList.contains('transition-prev')) {
+          paginationWrapper.classList.remove('transition-prev');
+          contador--;
+          $('.numeracion').html(contador);
+    }
 }
-
 
 //Esto funciona en todos los navegadores menos Internet explorer
 //el 'this' de la funcion btnClick dice que no esta definido o que es nulo

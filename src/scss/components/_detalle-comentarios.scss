@@ -1,7 +1,10 @@
 .comentarios {
     background-color: $color-negro;
 
-    .ui-status { display: none; }
+    .ui-status { 
+        display: none; 
+    }
+
     &.empty {
         .ui-status.empty { 
             display: block; 
@@ -12,12 +15,15 @@
             }
         }
     }
+
     &.loading {
         .ui-status.loading { display: block; }
     }
+
     &.error {
         .ui-status.error { display: block; }
     }
+
     &.ideal {
         .ui-status.ideal { 
             display: block;
@@ -112,6 +118,3 @@
         }
     }
 }
-
-
-

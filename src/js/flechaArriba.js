@@ -5,7 +5,7 @@ $(window).bind('scroll', function () {
     let anchuraDeVentana = $(window).width();
     let num;
 
-    //compruebo anchura de ventana para que se muestre justo perder el título
+    //compruebo anchura de ventana para que se muestre justo perder el título por el responsive
     if (anchuraDeVentana <= 1023) {
         num = 70;
     } else {
