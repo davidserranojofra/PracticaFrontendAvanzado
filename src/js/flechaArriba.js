@@ -1,7 +1,7 @@
 const $ = require("jquery");
 
 //miro cuando se hace scroll en la pantalla
-$(window).bind('scroll', function () {
+window.addEventListener('scroll', function () {
     let anchuraDeVentana = $(window).width();
     let num;
 
